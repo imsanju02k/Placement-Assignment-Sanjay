@@ -1,0 +1,8 @@
+Interface cannot be instantiated,meaning you cannot create objects of an interface directly.
+Interfaces only have method signatures, without any implementation.
+A Class can implement multiple interfaces,separated by commas.
+Interface provide a way to achieve multiple inheritance in java.
+Interfaces are used to define contracts,specifying what methods a class implementing the interface must have.
+
+
+

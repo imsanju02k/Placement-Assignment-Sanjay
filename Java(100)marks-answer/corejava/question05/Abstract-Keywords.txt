@@ -1,0 +1,5 @@
+Abstract classes cannot be instantiated,means we cannot create objects of an abstract class directly.
+Abstract classes can have abstract methods which are declared without an implementation in the abstract class.the derived classes must provide the implementation for these methods .
+Abstract classes can also have regular methods with implementations.
+Abstract classes can have instance variables, constructors,and can provide common functionality to derived classes.
+Derived classes extend the abstract class using the 'extends'keywords. 

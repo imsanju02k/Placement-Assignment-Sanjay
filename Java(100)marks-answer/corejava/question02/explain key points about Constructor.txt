@@ -1,0 +1,8 @@
+Constructors are special methods that are used to initialize objects of a class.
+Constructor not having the "return"type -> void.
+Constructor can we called implicitly when a object of a class is created using the "new"keyword.
+Default constructor provided by the complier with no parameters or zero parameters.
+Constructor can be Overloaded,which means a class can have multiple constructor with different parameters lists.
+the 'super()' keyword always should be in the first line of the constructor which means parents class content can be invoked to child class constructor with default (no-arg)constructor
+constructor can have access modifiers ( e.g: public,private,protected) to control their visibility.
+constructor are not inherited,but they are called from the derived class constructors using the 'super()'keyword to ensure proper initialization of the parent class
