@@ -1,0 +1,83 @@
+public class Stack {
+    private int maxSize;       // maximum size of the stack
+    private int[] stackArray;  // array to hold the stack elements
+    private int top;           // index of the top element in the stack
+
+    // Constructor to initialize the stack
+    public Stack(int size) {
+        maxSize = size;
+        stackArray = new int[maxSize];
+        top = -1;  
+    }
+
+    // Method to check if the stack is empty
+    public boolean isEmpty() {
+        return (top == -1);
+    }
+
+    // Method to check if the stack is full
+    public boolean isFull() {
+        return (top == maxSize - 1);
+    }
+
+    // Method to push an element onto the stack
+    public void push(int element) {
+        if (isFull()) {
+            System.out.println("Stack is full. Cannot push element.");
+        } else {
+            top++;
+            stackArray[top] = element;
+            System.out.println("Pushed element: " + element);
+        }
+    }
+
+    // Method to pop the top element from the stack
+    public int pop() {
+        if (isEmpty()) {
+            System.out.println("Stack is empty. Cannot pop element.");
+            return -1; 
+        } else {
+            int poppedElement = stackArray[top];
+            top--;
+            System.out.println("Popped element: " + poppedElement);
+            return poppedElement;
+        }
+    }
+
+    // Method to get the top element of the stack without removing it
+    public int peek() {
+        if (isEmpty()) {
+            System.out.println("Stack is empty.");
+            return -1;  // return a default value indicating stack underflow
+        } else {
+            return stackArray[top];
+        }
+    }
+
+    // Method to display the elements in the stack
+    public void display() {
+        if (isEmpty()) {
+            System.out.println("Stack is empty.");
+        } else {
+            System.out.print("Stack: ");
+            for (int i = top; i >= 0; i--) {
+                System.out.print(stackArray[i] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        Stack stack = new Stack(5);
+
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+        stack.display();  
+
+        stack.pop(); 
+        System.out.println("Top element: " + stack.peek());  
+
+        stack.display();  
+    }
+}
