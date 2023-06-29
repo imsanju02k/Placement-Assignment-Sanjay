@@ -1,0 +1,77 @@
+
+Q1. What are the Conditional Operators in Java?
+In Java, the conditional operators are:
+- Equal to (==)
+- Not equal to (!=)
+- Greater than (>)
+- Less than (<)
+- Greater than or equal to (>=)
+- Less than or equal to (<=)
+
+Q2. What are the types of operators based on the number of operands?
+Based on the number of operands, operators can be classified as:
+- Unary Operators: Operators that operate on a single operand (e.g., ++, --, !)
+- Binary Operators: Operators that operate on two operands (e.g., +, -, *, /)
+- Ternary Operator: The conditional operator (?:) is the only ternary operator in Java, which takes three operands.
+
+Q3. What is the use of Switch case in Java programming?
+The switch case statement in Java is used to perform different actions based on different conditions. It provides a concise way to write multiple if-else conditions. It evaluates an expression and matches its value with different cases to execute the corresponding code block.
+
+Q4. What are the conditional Statements and use of conditional statements in Java?
+Conditional statements in Java are used to perform different actions based on different conditions. The two main conditional statements in Java are:
+- if statement: It executes a block of code if a specified condition is true.
+- if-else statement: It executes one block of code if a specified condition is true and another block of code if the condition is false.
+
+Q5. What is the syntax of if-else statement?
+The syntax of the if-else statement in Java is as follows:
+```
+if (condition) {
+    // code to be executed if the condition is true
+} else {
+    // code to be executed if the condition is false
+}
+```
+
+Q6. How do you compare two strings in Java?
+In Java, you can compare two strings using the `equals()` method or the `compareTo()` method. The `equals()` method checks if two strings have the same content, while the `compareTo()` method compares the lexicographical order of two strings.
+
+Q7. What is Mutable String in Java? Explain with an example.
+In Java, strings are immutable, which means their values cannot be changed once created. However, the `StringBuilder` and `StringBuffer` classes provide mutable string objects. These classes allow you to modify the content of a string without creating a new string object. For example:
+```
+StringBuilder sb = new StringBuilder("Hello");
+sb.append(" World");
+String result = sb.toString(); // result = "Hello World"
+```
+
+Q8. Write a program to sort a String Alphabetically.
+Here's an example program to sort a string alphabetically in Java:
+```
+import java.util.Arrays;
+
+public class SortStringAlphabetically {
+    public static void main(String[] args) {
+        String str = "OpenAI";
+        char[] charArray = str.toCharArray();
+        Arrays.sort(charArray);
+        String sortedStr = new String(charArray);
+        System.out.println("Sorted string: " + sortedStr);
+    }
+}
+```
+
+Q9. Write a program to check if the letter 'e' is present in the word 'Umbrella'.
+Here's an example program to check if the letter 'e' is present in the word 'Umbrella':
+```
+public class CheckLetterPresence {
+    public static void main(String[] args) {
+        String word = "Umbrella";
+        boolean isPresent = word.contains("e");
+        System.out.println("Letter 'e' is present: " + isPresent);
+    }
+}
+```
+
+Q10. Where exactly is the string constant pool located in the memory?
+In Java
+
+, the string constant pool is a part of the Java Heap memory. It is a separate area within the heap memory and stores all the literal string objects. The string constant pool is created by the JVM to optimize memory usage by reusing common string literals instead of creating multiple instances of the same string.
