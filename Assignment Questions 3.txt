@@ -1,0 +1,180 @@
+Q1. To create a simple banking system program using object-oriented programming (OOP) concepts, you can define a class called "BankAccount" with attributes such as account holder name and balance. Here's an example in Java:
+
+```java
+class BankAccount {
+    private String accountHolderName;
+    private double balance;
+
+    // Constructor
+    public BankAccount(String accountHolderName, double balance) {
+        this.accountHolderName = accountHolderName;
+        this.balance = balance;
+    }
+
+    // Getters and setters
+    public String getAccountHolderName() {
+        return accountHolderName;
+    }
+
+    public void setAccountHolderName(String accountHolderName) {
+        this.accountHolderName = accountHolderName;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    // Other methods
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    public void withdraw(double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+        } else {
+            System.out.println("Insufficient balance");
+        }
+    }
+}
+```
+
+Q2. To demonstrate method overriding, you can create a parent class and a child class that inherits a method from the parent class and overrides it. Here's an example in Java:
+
+```java
+class Parent {
+    public void display() {
+        System.out.println("Parent class display method");
+    }
+}
+
+class Child extends Parent {
+    @Override
+    public void display() {
+        System.out.println("Child class display method");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Child child = new Child();
+        child.display(); // Output: Child class display method
+
+        Parent parent = new Parent();
+        parent.display(); // Output: Parent class display method
+    }
+}
+```
+
+Q3. To demonstrate runtime polymorphism in Java, you can create a base class and multiple derived classes with overridden methods. The appropriate method is called based on the actual object type at runtime. Here's an example:
+
+```java
+class Shape {
+    public void draw() {
+        System.out.println("Drawing a shape");
+    }
+}
+
+class Circle extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+
+class Rectangle extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a rectangle");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape shape1 = new Circle();
+        Shape shape2 = new Rectangle();
+
+        shape1.draw(); // Output: Drawing a circle
+        shape2.draw(); // Output: Drawing a rectangle
+    }
+}
+```
+
+Q4. Compile-time polymorphism in Java is achieved through method overloading, where multiple methods with the same name but different parameter lists are defined in a class. The appropriate method is selected based on the arguments passed during compile-time. Here's an example:
+
+```java
+class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calculator calculator = new Calculator();
+
+        int result1 = calculator.add(2, 3);
+        System.out.println(result1); // Output: 5
+
+        double result2 = calculator.add(2.5, 3.5);
+        System.out.println(result2); // Output: 6.0
+    }
+}
+```
+
+Q5. Loose coupling in Java can be achieved by using OOPs concepts such
+
+ as interfaces and dependency injection. By programming to interfaces and using dependency injection frameworks, you can reduce the direct dependencies between classes, making the code more modular and maintainable.
+
+Q6. The benefit of encapsulation in Java is that it provides data hiding and abstraction. Encapsulation allows you to encapsulate data and methods into a single unit (class) and control access to the data through methods. This protects the data from being directly accessed and modified by external code, ensuring data integrity and security. Encapsulation also allows you to hide the internal implementation details of a class, providing a clean interface for interacting with the object.
+
+Q7. No, Java is not a 100% object-oriented programming language because it supports primitive data types (int, float, etc.) that are not objects. Additionally, Java has static methods and variables that belong to the class itself, not to instances of the class. However, Java is primarily based on OOP principles and supports features like classes, objects, inheritance, and polymorphism, making it an object-oriented language.
+
+Q8. The advantages of abstraction in Java are:
+
+- Simplifies complex systems: Abstraction allows you to focus on the essential details of an object or system while hiding unnecessary complexity. It helps in breaking down a complex system into manageable modules and classes.
+- Enhances code reusability: By creating abstract classes and interfaces, you can define common behaviors and functionality that can be inherited by multiple subclasses, promoting code reuse.
+- Provides a clear interface: Abstraction defines a clear interface for interacting with objects. It hides the internal implementation details and provides a simplified view, making it easier to use and understand.
+- Facilitates maintainability: With abstraction, changes to the internal implementation of a class can be made without affecting the code that uses the class. This makes maintenance and updates easier and reduces the impact of changes on other parts of the system.
+
+Q9. Abstraction in Java is the process of hiding the implementation details and exposing only the essential features or behavior of an object. It allows you to create abstract classes and interfaces that define common behaviors and functionality without providing the actual implementation. An example of abstraction can be a Shape class with an abstract draw() method that is implemented by different shape classes such as Circle and Rectangle.
+
+```java
+abstract class Shape {
+    public abstract void draw();
+}
+
+class Circle extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+
+class Rectangle extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a rectangle");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape circle = new Circle();
+        Shape rectangle = new Rectangle();
+
+        circle.draw();    // Output: Drawing a circle
+        rectangle.draw(); // Output: Drawing a rectangle
+    }
+}
+```
+
+Q10. In Java, a final class is a class that cannot be inherited or subclassed. It is declared using the `final` keyword. A final class is often used to prevent the class from being extended or overridden, ensuring that its implementation remains unchanged. Final classes are typically used for utility classes or classes that provide constant values or immutable objects. An example of a final class in Java is the `String` class.
