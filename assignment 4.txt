@@ -1,0 +1,99 @@
+
+Q1.1. Here's an example of how to create an interface in Java:
+
+```java
+interface MyInterface {
+    void myMethod();
+}
+
+class MyClass implements MyInterface {
+    public void myMethod() {
+        System.out.println("Implementing the interface method");
+    }
+
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        obj.myMethod();
+    }
+}
+```
+
+Q2. Here's an example of a Java program with 2 concrete methods and 2 abstract methods:
+
+```java
+abstract class AbstractClass {
+    public void concreteMethod1() {
+        System.out.println("Concrete Method 1");
+    }
+
+    public void concreteMethod2() {
+        System.out.println("Concrete Method 2");
+    }
+
+    public abstract void abstractMethod1();
+
+    public abstract void abstractMethod2();
+}
+
+class ConcreteClass extends AbstractClass {
+    public void abstractMethod1() {
+        System.out.println("Abstract Method 1 implementation");
+    }
+
+    public void abstractMethod2() {
+        System.out.println("Abstract Method 2 implementation");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ConcreteClass obj = new ConcreteClass();
+        obj.concreteMethod1();
+        obj.concreteMethod2();
+        obj.abstractMethod1();
+        obj.abstractMethod2();
+    }
+}
+```
+
+Q3. Here's an example of using a functional interface in Java:
+
+```java
+@FunctionalInterface
+interface MyFunctionalInterface {
+    void myMethod();
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyFunctionalInterface obj = () -> {
+            System.out.println("Executing myMethod");
+        };
+        obj.myMethod();
+    }
+}
+```
+
+Q4. An interface in Java is a reference type that is similar to a class. It is a collection of abstract methods that define a contract for the behavior that a class must implement. In addition to abstract methods, interfaces can also contain constants, default methods, and static methods. It provides a way to achieve abstraction and multiple inheritance in Java.
+
+Q5. Interfaces in Java serve several purposes:
+- They define a contract that a class must adhere to if it implements the interface.
+- They provide a way to achieve abstraction by separating the definition of methods from their implementation.
+- They allow multiple inheritance of types, as a class can implement multiple interfaces.
+- They facilitate loose coupling and modularity in code by promoting interaction through interfaces rather than concrete classes.
+- They enable the use of polymorphism, as objects can be treated as instances of their interface type.
+
+Q6. A lambda expression in Java 8 is a concise way to represent an anonymous function. It provides a way to pass behavior as an argument to methods or assign it to variables. Lambda expressions are typically used in functional interfaces, which are interfaces with a single abstract method.
+
+Q7. Yes, you can pass lambda expressions to methods in Java. This is possible when the method parameter's type is a functional interface, and the lambda expression matches the signature of the functional interface's abstract method. The lambda expression provides the implementation of the abstract method.
+
+Q8. In Java 8, a functional interface is an interface that contains exactly one abstract method. It may also contain default methods or static methods. Functional interfaces are used to enable the use of lambda expressions and method references, allowing functional programming techniques in Java.
+
+Q9. The benefits of lambda expressions in Java 8 include:
+- Concise syntax: Lambda expressions provide a more compact and readable way to represent anonymous functions compared to traditional anonymous inner classes.
+- Improved code organization: Lambdas promote a functional programming style, making the code more modular and easier to maintain.
+- Enhanced collection operations: Lambdas are commonly used with the Stream API to perform complex operations on collections, such as filtering, mapping, and reducing, with less code and improved performance.
+- Enable functional programming techniques: Lambdas facilitate the use of functional interfaces, method references, and the concept of immutability, which are fundamental concepts in functional programming.
+- Support for parallel processing: The functional programming style encouraged by lambdas makes it easier to leverage parallel processing capabilities provided by Java libraries.
+
+Q10. No, it is not mandatory for a lambda expression to have parameters. Lambda expressions can be parameterless if the target functional interface's abstract method does not require any arguments. For example, a lambda expression representing a simple print statement would not have any parameters.
